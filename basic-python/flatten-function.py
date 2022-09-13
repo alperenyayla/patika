@@ -1,6 +1,10 @@
-def flatten(n): # the function makes the lists flatten. n is a list.
-    for i in n:
-        if isinstance(i, list): # checks the if element of a list is a list, and if it is a list calls the flatten function again.
-            flatten(i)
-        else:
-            lnew.append(i)
+def flatten(l):
+    if type(l) is list:
+        return [element for item in l for element in flatten(item)]
+    else:
+        return [l]
+
+def reverse(l):
+    if type(l) is list:
+        return [reverse(item) for item in l[::-1]]
+    return l
